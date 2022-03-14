@@ -43,6 +43,8 @@ function App() {
       });
   }, []);
 
+  console.log(user);
+
   return (
     <div className="app">
       <Modals
@@ -78,6 +80,8 @@ function App() {
         {posts.map(({ id, post }) => (
           <Post
             key={id}
+            postId={id}
+            user={user}
             username={post.username}
             caption={post.caption}
             imageUrl={post.imageUrl}
@@ -85,7 +89,7 @@ function App() {
           />
         ))}
       </div>
-      <ImageUpload user={user} username={user?.displayName} />
+      <ImageUpload user={user} username={user?.multiFactor.user.displayName} />
     </div>
   );
 }
