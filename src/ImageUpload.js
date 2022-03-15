@@ -61,15 +61,17 @@ const ImageUpload = ({ user, username }) => {
 
   return (
     <div className="imageUpload">
-      <progress className="imageUpload_progress" value={progress} max="100" />
-      <input
-        type="text"
-        placeholder="Enter a caption..."
-        onChange={(e) => setCaption(e.target.value)}
-        value={caption}
-      />
-      <input type="file" onChange={handleChange} />
-      <Button onClick={handleUpload}>Upload</Button>
+      <div className="imageUpload_container">
+        <progress className="imageUpload_progress" value={progress} max="100" />
+        <input
+          type="text"
+          placeholder="Enter a caption..."
+          onChange={(e) => setCaption(e.target.value)}
+          value={caption}
+        />
+        <input type="file" onChange={handleChange} />
+        <Button onClick={handleUpload}>Upload</Button>
+      </div>
     </div>
   );
 };
